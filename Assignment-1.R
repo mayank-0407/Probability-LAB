@@ -1,14 +1,14 @@
 # (1) Create a vector c = [5,10,15,20,25,30] and write a program which returns the maximum and minimum of this vector.
-
+# -------------------------------CODE-----------------------------------------
 # main_vector <- c(5, 10, 15, 20, 25, 30)
 # max_value <- max(main_vector)
 # min_value <- min(main_vector)
 # print(max_value)
 # print(min_value)
-
+# ------------------------------------------------------------------------
 # (2) Write a program in R to find factorial of a number by taking input from user. Please
 # print error message if the input number is negative.
-
+# -------------------------------CODE-----------------------------------------
 # factorial <- function(n) {
 #   if (n < 0) {
 #     stop("Error: Factorial is not defined for negative numbers.")
@@ -21,10 +21,10 @@
 # var=as.integer(readline())
 # ans <- factorial(var)
 # print(ans)
-
+# ------------------------------------------------------------------------
 # (3) Write a program to write first n terms of a Fibonacci sequence. You may take n as an
 # input from the user.
-
+# -------------------------------CODE-----------------------------------------
 # fibonacci <- function(n) {
 #   fib_seq <- numeric(n)
 #   fib_seq[1] <- 0
@@ -39,10 +39,10 @@
 # 
 # ans <- fibonacci(5)
 # print(ans)
-
+# ------------------------------------------------------------------------
 # (4) Write an R program to make a simple calculator which can add, subtract, multiply
 # and divide.
-
+# -------------------------------CODE-----------------------------------------
 # add <- function(x, y) {
 #   return(x + y)
 # }
@@ -71,11 +71,12 @@
 #                  stop("Error: Invalid option."))
 # cat("Result : ",result)
 
-
+# ------------------------------------------------------------------------
 # (5) Explore plot, pie, barplot etc. (the plotting options) which are built-in functions in R.
-
+# -------------------------------CODE-----------------------------------------
 # x <- c(1, 2, 3, 4, 5)
 # y <- c(3, 5, 2, 7, 4)
 # plot(x, y)
 # pie(x,y)
 # barplot(x,y)
+# ------------------------------------------------------------------------
