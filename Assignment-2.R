@@ -98,19 +98,27 @@ range(data_set$Sepal.Length)
 # ------------------------------------------------------------------------
 # (d) Find the mean of the sepal length.
 # -------------------------------CODE-----------------------------------------
+mean(data_set$Sepal.Length)
 # ------------------------------------------------------------------------
 # (e) Find the median of the sepal length.
 # -------------------------------CODE-----------------------------------------
+median(data_set$Sepal.Length)
 # ------------------------------------------------------------------------
 # (f) Find the first and the third quartiles and hence the interquartile range.
 # -------------------------------CODE-----------------------------------------
+quantile(data_set$Sepal.Length,0.25)
+quantile(data_set$Sepal.Length,0.75)
+IQR(data_set$Sepal.Length)
 # ------------------------------------------------------------------------
 # (g) Find the standard deviation and variance.
 # -------------------------------CODE-----------------------------------------
+sd(data_set$Sepal.Length)
+var(data_set$Sepal.Length)
 # ------------------------------------------------------------------------
 # (h) Try doing the above exercises for sepal.width, petal.length and petal.width.
 # -------------------------------CODE-----------------------------------------
 # ------------------------------------------------------------------------
 # (i) Use the built-in function summary on the dataset Iris.
 # -------------------------------CODE-----------------------------------------
+summary(data_set)
 # ------------------------------------------------------------------------
