@@ -62,3 +62,58 @@ mdf_y
 # e
 cp<-mat[1,2]/mdf_y[2]
 cp
+
+# f
+# Define the joint probability mass function f(x, y)
+f <- function(x, y) {
+    return((x + y) / 30)
+}
+
+# (i) Display the joint mass function in rectangular (matrix) form
+X <- 0:3
+Y <- 0:2
+joint_matrix <- outer(X, Y, FUN = Vectorize(f))
+print(joint_matrix)
+
+# (ii) Check if it's a joint mass function by verifying that the sum is 1
+is_joint_mass_function <- sum(joint_matrix) == 1
+print(paste("Is it a joint mass function?", is_joint_mass_function))
+
+# (iii) Find the marginal distribution g(x) for x = 0, 1, 2, 3
+marginal_x <- apply(joint_matrix, 1, sum)
+print("Marginal distribution g(x):")
+print(marginal_x)
+
+# (iv) Find the marginal distribution h(y) for y = 0, 1, 2
+marginal_y <- apply(joint_matrix, 2, sum)
+print("Marginal distribution h(y):")
+print(marginal_y)
+
+# (v) Find the conditional probability at x = 0 given y = 1
+conditional_prob <- joint_matrix[1, 2] / marginal_y[2]
+print(paste("Conditional probability at x = 0 given y = 1:", conditional_prob))
+
+# (vi) Calculate expected values and variances
+EX <- sum(X * marginal_x)
+print(paste("E(X):", EX))
+
+EY <- sum(Y * marginal_y)
+print(paste("E(Y):", EY))
+
+# MI= matrix(c(f1(0,0:2),f2(1,0:2),f3(2,0:2),f4(3,0:2)),nrow=4,ncol=3,byrow = Trur)
+
+EXY <- sum(outer(X, Y, FUN = function(x, y) x * y * f(x, y)))
+print(paste("E(XY):", EXY))
+
+VarX <- sum((X - EX)^2 * marginal_x)
+print(paste("Var(X):", VarX))
+
+VarY <- sum((Y - EY)^2 * marginal_y)
+print(paste("Var(Y):", VarY))
+
+CovXY <- EXY - EX * EY
+print(paste("Cov(X, Y):", CovXY))
+
+CorrXY <- CovXY / (sqrt(VarX) * sqrt(VarY))
+print(paste("Correlation coefficient (rho):", CorrXY))
+
